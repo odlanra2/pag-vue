@@ -1,0 +1,39 @@
+
+<style>
+     *{margin:0px; padding:0px;}
+</style>
+<div id="mapa_div" style="width:100%; height:600px; margin: 0px;
+padding: 0px;"></div>  
+
+<script>
+function initMap() {
+    //--------------------------------------------------------------------------------
+    //**                  GeoLocalizacion & Configuracion del MAP                   ** 
+    //--------------------------------------------------------------------------------
+    /*ROADMAP (normal, default 2D map)
+    SATELLITE (photographic map)
+    HYBRID (photographic map + roads and city names)
+    TERRAIN (map with mountains, rivers, etc.)*/
+        var mapOptions = {
+          center: new google.maps.LatLng(4.7992667,-75.7064906),
+          zoom: 16,
+          zoomControl:true,
+          zoomControlOptions:true,
+          scrollwheel:false,
+          mapTypeId: google.maps.MapTypeId.HYBRID
+        };
+        var map = new google.maps.Map(document.getElementById("mapa_div"),
+            mapOptions);
+    //--------------------------------------------------------------------------------
+    //**                            Marcador del Mapa                               ** 
+    //--------------------------------------------------------------------------------
+         var myLatlng = new google.maps.LatLng(4.7992667,-75.7064906);
+         var marker = new google.maps.Marker({
+		    position: myLatlng,
+		    title:"Resort Islas Del Sol"
+		});
+        	marker.setMap(map);
+
+}
+</script>
+<script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpuZiNZTJPFypp-oPbQ2Pq0g504x0hugM&callback&callback=initMap"></script> 
